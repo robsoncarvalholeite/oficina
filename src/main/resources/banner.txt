@@ -1,0 +1,54 @@
+${AnsiColor.GREEN}
+      `/shmNMMNdyo-                                                 `:+shdmNNNNNmh/
+   -yNMMMMMMMMMMMMmo`                                          `:smMMMMMMMMMMMMMMM:
+ `sMMMMMMMMMMmmMMMMMNo`                                      -sNMMMMMMMMMMMMMMMMMd`
+ hMMMMMMMMMMo``:dMMMMMm+`                                  :hMMMMMMMMMMMMMMMMMMm+`
++MMMMMMMMMMMm/  `:dMMMMMm+`                              .yNMMMMMMMMMMMMMMMMMmo`
+hMMMMMMMMMMMMMd/  `/dMMMMMm+`                           :mMMMMMMMMMMMMMMMMMmo`
+yMMMMN/./dMMMMMMd/  `/dMMMMMm+`                        /NMMMMMMMMMMMMMMMMNo.
+:MMMMN/  `/dMMMMMMd/  `/dMMMMMd/`                     :NMMMMMMMMMMMMMMMNo.
+ oMMMMMd:  `/dMMMMMMh:  `/dMMMMMd/`                  `mMMMMMMMMMMMMMMMd.
+  /mMMMMNh:  `/dMMMMMNh:  `+mMMMMMd/`                /MMMMMMMMMMMMMMMM:                       -+ss:
+   .omMMMMNh:  `+dMMMMMNh:  `+mMMMMMd/`              hMMMMMMMMMMMMMMMM+                     -yNMMMM+
+     .omMMMMNh:  `+mMMMMMNh:  `+mMMMMMh:`            mMMMMMMMMMMMMMMMMN+`                 -yNMMMMMMh
+       .omMMMMNy-  `+mMMMMMNy-  .omMMMMMh:`          mMMMMMMMMMMMMMMMMMMd/`             -yNMMMMMMMMh
+         .sNMMMMNy-  .omMMMMMNy-  .omMMMMMh:         hMMMMMMMMMMMMMMMMMMMMd/`         -yNMMMMMMMMMMo
+           .sNMMMMNy-  .omMMMMMNy-  .omMMMMMy`     `/mMMMMMMMMMMMMMMMMMMMMMMd/`    `-sNMMMMMMMMMMMM-
+             .sNMMMMNy-  .omMMMMMNy-  .omMMd/`   `/dMMMMMMMMMMMMMMMMMMMMMMMMMMmhssydNMMMMMMMMMMMMMy
+               -yNMMMMNy-  .sNMMMMMNs-  .o/`   `/dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm.
+                 -yNMMMMNs.  .sNMMMMMNs`     `/dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm-
+                   -yNMMMMNs.  .sNMMMd/`   `:dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh.
+                     -yNMMMMNs.  .sd/`   `:hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo`
+                       -hNMMMMNo`       :hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNs.
+                         -hMMMMm/     :hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd+.
+                           :hm+`    -hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmy+.
+                                  -hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdddmddhys+:.
+                                -hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy.
+                              -yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy-
+                            -yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy-
+                          .yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh-
+                        .yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh-
+                      .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh:
+                    .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh:    `.
+                  .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh:`   `/mNo.
+                .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd:`   `/dMMMMmo.
+              .omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/`    `hMMMMMMMMmo`
+            .omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/`       .sNMMMMMMMMm+`
+          .omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/`           .sNMMMMMMMMm+`
+        `+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/`               -yNMMMMMMMMm+`
+      `+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd+`                   -yNMMMMMMMMd+`
+    `+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+`                       -yNMMMMMMMMd+/--`
+   /dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+`                           -yNMMMMMMMMMMNmy:`
+ `sMMMMMMMmdyyyhmNMMMMMMMMMMMMMMMMMMMMMmo.                               :hNMMMMMMMMMMMMd/`
+ sMMMMMMd/.     `-sNMMMMMMMMMMMMMMMMMmo.                                   :MMMMMMMMMMMMMMh-
+.MMMMMMo`          -mMMMMMMMMMMMMMMmo.                                      hMMMMMMMMMMMMMMN/
++MMMMMd             /MMMMMMMMMMMMNo.                                        -NMMMMMMMMMMMMMMMo`
++MMMMMh             -MMMMMMMMMMNs.                                           -hMMMMMMMMMMMMMMMh.
+-MMMMMN-            sMMMMMMMMNs.                                               /dNMMMMMMMMMMMMMm:
+ sMMMMMm/`        .sMMMMMMMNs.                                                   -smMMMMMMMMMMMMN/
+ `yMMMMMMds:-..-+yNMMMMMMNy.                                                       `:smMMMMMMMMMMM+
+   /mMMMMMMMMMMMMMMMMMMNy.                                                            `:sNMMMMMMMMN.
+    `+dMMMMMMMMMMMMMMms.                                                                  :smMMMMNs`
+       ./shmNMMNmdy+-                                                                        ./oo.
+
+${AnsiColor.DEFAULT}
