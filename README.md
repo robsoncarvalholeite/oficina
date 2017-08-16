@@ -20,7 +20,7 @@ $ java -jar target/oficina-*.jar
 
 # Access Ping
 $ curl http://localhost:8080/api/ping
-> eg: now: Wed Aug 16 15:47:04 BRT 2017, UUID: f4626053-9366-467b-81b3-779e105fe2a1
+>> eg response: now: Wed Aug 16 15:47:04 BRT 2017, UUID: f4626053-9366-467b-81b3-779e105fe2a1
 or
 Open Browser on http://localhost:8080/ping
 ```
