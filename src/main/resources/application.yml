@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+# Logg Config.
+logging:
+  file: logs/oficina.log
+  level:
+    ROOT: ERROR
+    org.springframework.web: DEBUG
+    br.com.integralabs.oficina.*: DEBUG
+
+# Spring Async Thread Pool config.
+scheduledExecutorService:
+  corePoolSize: 2
