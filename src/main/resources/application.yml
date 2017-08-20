@@ -13,4 +13,21 @@ logging:
 
 # Spring Async Thread Pool config.
 scheduledExecutorService:
-  corePoolSize: 2
+  #corePoolSize: 2
+
+jdbc:
+  url: jdbc:postgresql://localhost:5432/oficina
+  username: oficina
+  password: oficina
+  maxPoolSize: 2
+
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      #ddl-auto: create-drop
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true

@@ -1,6 +1,6 @@
 package br.com.integralabs.oficina.controller;
 
-import br.com.integralabs.oficina.utils.AppConfig;
+import br.com.integralabs.oficina.config.AppConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
