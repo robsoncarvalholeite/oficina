@@ -10,6 +10,8 @@ import javax.persistence.Table;
 @Table(name = "CUSTOMERS")
 public class Customer extends BaseModel {
 
+    private static final long serialVersionUID = 9185372497422510361L;
+
     private String name;
 
     public String getName() {

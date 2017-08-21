@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
@@ -22,6 +23,8 @@ public abstract class BaseModel implements Serializable {
      * Logger.
      */
     protected static final Logger LOGGER = LoggerFactory.getLogger(BaseModel.class);
+
+    private static final long serialVersionUID = 8237074293760093051L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,6 +43,21 @@ public abstract class BaseModel implements Serializable {
     public BaseModel() {
         this.active = true;
     }
+
+    @PrePersist
+    public void prePersist() {
+        // Set now for create date.
+        if (Objects.isNull(this.getCreationDate())) {
+            this.setCreationDate(Calendar.getInstance().getTime());
+        }
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        // Set now for modification date
+        this.setModificationDate(Calendar.getInstance().getTime());
+    }
+
 
     @Override
     public String toString() {
