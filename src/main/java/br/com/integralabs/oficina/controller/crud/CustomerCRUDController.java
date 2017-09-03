@@ -2,8 +2,8 @@ package br.com.integralabs.oficina.controller.crud;
 
 import br.com.integralabs.oficina.controller.generic.impl.GenericCRUDControllerImpl;
 import br.com.integralabs.oficina.model.Customer;
-import br.com.integralabs.oficina.repo.BaseCrudRepository;
-import br.com.integralabs.oficina.repo.CustomerRepository;
+import br.com.integralabs.oficina.service.CustomerService;
+import br.com.integralabs.oficina.service.generic.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerCRUDController extends GenericCRUDControllerImpl<Customer> {
 
     @Autowired
-    private CustomerRepository crudRepository;
+    private CustomerService customerService;
 
     @Override
-    protected BaseCrudRepository getCrudRepository() {
-        return this.crudRepository;
+    protected GenericService getService() {
+        return this.customerService;
     }
 }

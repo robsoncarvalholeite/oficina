@@ -1,4 +1,4 @@
-package br.com.integralabs.oficina.controller.crud;
+package br.com.integralabs.oficina.controller.generic;
 
 import br.com.integralabs.oficina.model.BaseModel;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,7 +17,7 @@ public interface GenericCRUDController<T extends BaseModel> {
 
     T update(Long id, T model);
 
-    void delete(Long id);
+    void remove(Long id);
 
     List<T> findAll();
 }

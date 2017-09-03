@@ -1,5 +1,6 @@
-package br.com.integralabs.oficina.controller;
+package br.com.integralabs.oficina.controller.generic;
 
+import br.com.integralabs.oficina.exception.RestResponseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,13 +23,14 @@ public class GenericController {
 
     @ExceptionHandler(HttpServerErrorException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity handleAppException(HttpServerErrorException ex, HttpServletRequest request) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("timestamp", Calendar.getInstance().getTimeInMillis());
-        map.put("status", ex.getStatusCode());
-        map.put("error", ex.getStatusText());
-        map.put("message", ex.getMessage());
-        map.put("path", request.getRequestURI());
-        return new ResponseEntity(map, ex.getStatusCode());
+    public RestResponseException handleHttpServerErrorException(HttpServerErrorException ex, HttpServletRequest request) {
+        return new RestResponseException(ex.getStatusCode(), ex.getMessage(), request.getRequestURI());
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponseException handleIllegalArgumentException(IllegalArgumentException ex, HttpServletRequest request) {
+        return new RestResponseException(HttpStatus.BAD_REQUEST, ex.getMessage(), request.getRequestURI());
+    }
+
 }
