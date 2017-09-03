@@ -2,6 +2,7 @@ package br.com.integralabs.oficina.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -31,25 +32,22 @@ public abstract class BaseModel implements Serializable {
     private static final long serialVersionUID = 8237074293760093051L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
     private Long id;
 
-    @Column(name = "ACTIVE", nullable = false)
+    @Column(name = "ACTIVE", nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
     protected Boolean active;
 
     @Column(name = "CREATION_DATE", nullable = false)
     protected Date creationDate;
 
-    @Column(name = "MODIFICATION_DATE", nullable = true)
+    @Column(name = "MODIFICATION_DATE")
     protected Date modificationDate;
-
-    public BaseModel() {
-        this.active = true;
-    }
 
     @PrePersist
     public void prePersist() {
+        this.setModificationDate(null);
         // Set now for create date.
         if (this.isNew()) {
             this.setCreationDate(Calendar.getInstance().getTime());
@@ -61,7 +59,6 @@ public abstract class BaseModel implements Serializable {
         // Set now for modification date
         this.setModificationDate(Calendar.getInstance().getTime());
     }
-
 
     @Override
     public String toString() {
@@ -91,8 +88,12 @@ public abstract class BaseModel implements Serializable {
         return this;
     }
 
+    public Boolean isActive() {
+        return BooleanUtils.isTrue(this.active);
+    }
+
     public Boolean getActive() {
-        return active;
+        return this.active;
     }
 
     public BaseModel setActive(Boolean active) {

@@ -19,7 +19,7 @@ public interface GenericCRUDController<T extends BaseModel> {
 
     List<T> findAll();
 
-    void active(Long id);
+    void active(Long id) throws InstantiationException, IllegalAccessException;
 
-    void deactive(Long id);
+    void deactive(Long id) throws InstantiationException, IllegalAccessException;
 }

@@ -1,13 +1,14 @@
 package br.com.integralabs.oficina.service.generic;
 
 import br.com.integralabs.oficina.model.BaseModel;
-import br.com.integralabs.oficina.repo.BaseCrudRepository;
+import br.com.integralabs.oficina.repo.GenericCrudRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpServerErrorException;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,7 +20,7 @@ public abstract class GenericServiceImpl<T extends BaseModel> implements Generic
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(GenericServiceImpl.class);
 
-    protected abstract BaseCrudRepository getCrudRepository();
+    protected abstract GenericCrudRepository getCrudRepository();
 
     @Override
     public T find(Long id) {
@@ -29,14 +30,20 @@ public abstract class GenericServiceImpl<T extends BaseModel> implements Generic
 
     @Override
     public T save(T model) {
-
         if (model.isNew()) {
-            this.validateCreate(model);
+
             model.setId(null);
+            model.setActive(null);
+
+            this.validateCreate(model);
+
             return (T) this.getCrudRepository().save(model);
         } else {
+            model.setCreationDate(null);
+
             this.validateUpdate(model);
-            T updatedModel = (T) this.getCrudRepository().save(model);
+
+            T updatedModel = (T) this.getCrudRepository().updateNonNullFields(model);
 
             if (Objects.isNull(updatedModel))
                 throw new HttpServerErrorException(HttpStatus.NOT_FOUND, "Record not Found");
@@ -60,10 +67,12 @@ public abstract class GenericServiceImpl<T extends BaseModel> implements Generic
     }
 
     @Override
-    public void setActive(Long id, Boolean active) {
-        T model = find(id);
+    public void setActive(Long id, Boolean active) throws IllegalAccessException, InstantiationException {
+        T model = (T) ((Class)((ParameterizedType)this.getClass().
+                getGenericSuperclass()).getActualTypeArguments()[0]).newInstance();
+        model.setId(id);
         model.setActive(active);
-        save(model);
+        this.getCrudRepository().updateNonNullFields(model);
     }
 
     protected void validateUpdate(T model) {

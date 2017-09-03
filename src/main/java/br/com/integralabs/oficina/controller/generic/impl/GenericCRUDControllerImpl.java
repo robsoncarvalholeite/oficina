@@ -62,13 +62,13 @@ public abstract class GenericCRUDControllerImpl<T extends BaseModel> extends Gen
 
     @Override
     @PutMapping("/{id}/active")
-    public void active(@PathVariable("id") Long id) {
+    public void active(@PathVariable("id") Long id) throws InstantiationException, IllegalAccessException {
         this.getService().setActive(id, Boolean.TRUE);
     }
 
     @Override
     @PutMapping("/{id}/deactive")
-    public void deactive(@PathVariable("id") Long id) {
+    public void deactive(@PathVariable("id") Long id) throws InstantiationException, IllegalAccessException {
         this.getService().setActive(id, Boolean.FALSE);
     }
 }

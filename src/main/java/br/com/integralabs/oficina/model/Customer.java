@@ -1,5 +1,8 @@
 package br.com.integralabs.oficina.model;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -8,6 +11,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "CUSTOMERS")
+@DynamicInsert
+@DynamicUpdate
 public class Customer extends BaseModel {
 
     private static final long serialVersionUID = 9185372497422510361L;

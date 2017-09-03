@@ -17,5 +17,5 @@ public interface GenericService <T extends BaseModel> {
 
     List<T> findAll();
 
-    void setActive (Long id, Boolean active);
+    void setActive(Long id, Boolean active) throws IllegalAccessException, InstantiationException;
 }
