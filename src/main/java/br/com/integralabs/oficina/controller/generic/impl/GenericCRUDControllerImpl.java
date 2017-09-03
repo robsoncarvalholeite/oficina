@@ -1,20 +1,14 @@
 package br.com.integralabs.oficina.controller.generic.impl;
 
-import br.com.integralabs.oficina.controller.generic.GenericController;
 import br.com.integralabs.oficina.controller.generic.GenericCRUDController;
+import br.com.integralabs.oficina.controller.generic.GenericController;
 import br.com.integralabs.oficina.model.BaseModel;
-import br.com.integralabs.oficina.repo.BaseCrudRepository;
 import br.com.integralabs.oficina.service.generic.GenericService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * Created by robson on 02/09/17.
@@ -59,11 +53,22 @@ public abstract class GenericCRUDControllerImpl<T extends BaseModel> extends Gen
         this.getService().remove(id);
     }
 
-    @GetMapping
     @Override
-    public List<T> findAll () {
+    @GetMapping
+    public List<T> findAll() {
         LOGGER.info("Controller FindAll");
         return this.getService().findAll();
     }
 
+    @Override
+    @PutMapping("/{id}/active")
+    public void active(@PathVariable("id") Long id) {
+        this.getService().setActive(id, Boolean.TRUE);
+    }
+
+    @Override
+    @PutMapping("/{id}/deactive")
+    public void deactive(@PathVariable("id") Long id) {
+        this.getService().setActive(id, Boolean.FALSE);
+    }
 }

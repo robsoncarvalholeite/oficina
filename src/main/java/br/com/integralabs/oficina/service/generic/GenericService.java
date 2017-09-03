@@ -16,4 +16,6 @@ public interface GenericService <T extends BaseModel> {
     void remove(Long id);
 
     List<T> findAll();
+
+    void setActive (Long id, Boolean active);
 }

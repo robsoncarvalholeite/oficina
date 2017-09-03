@@ -59,6 +59,13 @@ public abstract class GenericServiceImpl<T extends BaseModel> implements Generic
         return (List<T>) this.getCrudRepository().findAll();
     }
 
+    @Override
+    public void setActive(Long id, Boolean active) {
+        T model = find(id);
+        model.setActive(active);
+        save(model);
+    }
+
     protected void validateUpdate(T model) {
     }
 

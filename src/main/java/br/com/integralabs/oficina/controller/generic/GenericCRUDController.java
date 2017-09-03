@@ -1,8 +1,6 @@
 package br.com.integralabs.oficina.controller.generic;
 
 import br.com.integralabs.oficina.model.BaseModel;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -20,4 +18,8 @@ public interface GenericCRUDController<T extends BaseModel> {
     void remove(Long id);
 
     List<T> findAll();
+
+    void active(Long id);
+
+    void deactive(Long id);
 }
