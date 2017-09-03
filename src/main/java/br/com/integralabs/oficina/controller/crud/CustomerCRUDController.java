@@ -1,5 +1,6 @@
 package br.com.integralabs.oficina.controller.crud;
 
+import br.com.integralabs.oficina.controller.generic.impl.GenericCRUDControllerImpl;
 import br.com.integralabs.oficina.model.Customer;
 import br.com.integralabs.oficina.repo.BaseCrudRepository;
 import br.com.integralabs.oficina.repo.CustomerRepository;
