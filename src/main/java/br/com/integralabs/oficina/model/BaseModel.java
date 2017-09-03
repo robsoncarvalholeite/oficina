@@ -1,5 +1,7 @@
 package br.com.integralabs.oficina.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -17,6 +19,8 @@ import java.util.Objects;
  */
 
 @MappedSuperclass
+@JsonIgnoreProperties(ignoreUnknown = true, value = {"new", "active"})
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class BaseModel implements Serializable {
 
     /**
@@ -47,7 +51,7 @@ public abstract class BaseModel implements Serializable {
     @PrePersist
     public void prePersist() {
         // Set now for create date.
-        if (Objects.isNull(this.getCreationDate())) {
+        if (this.isNew()) {
             this.setCreationDate(Calendar.getInstance().getTime());
         }
     }
