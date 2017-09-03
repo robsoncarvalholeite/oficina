@@ -1,4 +1,4 @@
-package br.com.integralabs.oficina.utils;
+package br.com.integralabs.oficina.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ public class AppConfig {
     /**
      * Thread pool size.
      */
-    @Value("${scheduledExecutorService.corePoolSize}")
+    @Value("${scheduledExecutorService.corePoolSize:1}")
     private Integer corePoolSize;
 
     /**

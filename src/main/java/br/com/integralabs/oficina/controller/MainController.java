@@ -1,6 +1,7 @@
 package br.com.integralabs.oficina.controller;
 
 
+import br.com.integralabs.oficina.controller.generic.GenericController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
