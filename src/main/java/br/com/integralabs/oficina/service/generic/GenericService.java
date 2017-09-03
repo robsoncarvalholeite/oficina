@@ -1,19 +1,19 @@
-package br.com.integralabs.oficina.service;
+package br.com.integralabs.oficina.service.generic;
+
+import br.com.integralabs.oficina.model.BaseModel;
 
 import java.util.List;
 
 /**
  * Created by robson on 03/09/17.
  */
-public interface GenericService <T> {
+public interface GenericService <T extends BaseModel> {
 
     T find(Long id);
 
-    T create(T model);
+    T save(T model);
 
-    T update(Long id, T model);
-
-    void delete(Long id);
+    void remove(Long id);
 
     List<T> findAll();
 }

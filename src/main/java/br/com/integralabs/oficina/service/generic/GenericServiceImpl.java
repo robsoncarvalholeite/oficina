@@ -15,9 +15,9 @@ import java.util.Optional;
 /**
  * Created by robson on 03/09/17.
  */
-public abstract class GenericCRUDService<T extends BaseModel> implements GenericService<T> {
+public abstract class GenericServiceImpl<T extends BaseModel> implements GenericService<T> {
 
-    protected static final Logger LOGGER = LoggerFactory.getLogger(GenericCRUDService.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(GenericServiceImpl.class);
 
     protected abstract BaseCrudRepository getCrudRepository();
 
@@ -59,12 +59,12 @@ public abstract class GenericCRUDService<T extends BaseModel> implements Generic
         return (List<T>) this.getCrudRepository().findAll();
     }
 
-    private void validateUpdate(T model) {
+    protected void validateUpdate(T model) {
     }
 
-    private void validateCreate(T model) {
+    protected void validateCreate(T model) {
     }
 
-    private void validateRemove(Long id) {
+    protected void validateRemove(Long id) {
     }
 }
