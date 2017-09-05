@@ -9,7 +9,19 @@
     <packaging>jar</packaging>
 
     <name>oficina</name>
-    <description>See https://github.com/robsoncarvalholeite/oficina</description>
+    <description>See repo https://github.com/robsoncarvalholeite/oficina</description>
+    <developers>
+        <developer>
+            <name>Robson Leite</name>
+            <email>robsoncarvalholeite@gmail.com</email>
+            <url>https://github.com/robsoncarvalholeite</url>
+        </developer>
+        <developer>
+            <name>Allan Rodrigues</name>
+            <email>allanrodrigues@gmail.com</email>
+            <url>https://github.com/allanhenriquers</url>
+        </developer>
+    </developers>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -86,16 +98,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
