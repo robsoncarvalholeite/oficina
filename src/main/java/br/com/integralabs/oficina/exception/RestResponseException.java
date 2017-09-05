@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.http.HttpStatus;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
 
 /**
@@ -13,54 +14,40 @@ import java.util.Calendar;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RestResponseException extends Exception {
 
-    private Long timestamp;
-    private HttpStatus status;
-    private String error;
-    private String message;
-    private String path;
+    private final Long timestamp;
+    private final HttpStatus status;
+    private final String error;
+    private final String message;
+    private final String path;
+    private final String method;
+    public RestResponseException(HttpStatus status, String message, HttpServletRequest request) {
 
-    public RestResponseException(HttpStatus status, String message, String path) {
         this.status = status;
         this.message = message;
-        this.path = path;
+        this.path = request.getRequestURI();
+        this.method = request.getMethod();
         this.error = status.getReasonPhrase();
         this.timestamp = Calendar.getInstance().getTimeInMillis();
     }
 
     public HttpStatus getStatus() {
-        return status;
-    }
-
-    public RestResponseException setStatus(HttpStatus status) {
-        this.status = status;
-        return this;
+        return this.status;
     }
 
     public String getError() {
-        return error;
-    }
-
-    public RestResponseException setError(String error) {
-        this.error = error;
-        return this;
+        return this.error;
     }
 
     @Override
     public String getMessage() {
-        return message;
-    }
-
-    public RestResponseException setMessage(String message) {
-        this.message = message;
-        return this;
+        return this.message;
     }
 
     public String getPath() {
-        return path;
+        return this.path;
     }
 
-    public RestResponseException setPath(String path) {
-        this.path = path;
-        return this;
+    public String getMethod() {
+        return this.method;
     }
 }

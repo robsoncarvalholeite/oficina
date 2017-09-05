@@ -7,7 +7,7 @@ server:
 logging:
   file: logs/oficina.log
   level:
-    ROOT: ERROR
+    ROOT: INFO
     org.springframework.web: DEBUG
     br.com.integralabs.oficina.*: DEBUG
 

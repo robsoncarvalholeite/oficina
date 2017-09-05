@@ -24,13 +24,13 @@ public class GenericController {
     @ExceptionHandler(HttpServerErrorException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public RestResponseException handleHttpServerErrorException(HttpServerErrorException ex, HttpServletRequest request) {
-        return new RestResponseException(ex.getStatusCode(), ex.getMessage(), request.getRequestURI());
+        return new RestResponseException(ex.getStatusCode(), ex.getMessage(), request);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public RestResponseException handleIllegalArgumentException(IllegalArgumentException ex, HttpServletRequest request) {
-        return new RestResponseException(HttpStatus.BAD_REQUEST, ex.getMessage(), request.getRequestURI());
+        return new RestResponseException(HttpStatus.BAD_REQUEST, ex.getMessage(), request);
     }
 
 }
